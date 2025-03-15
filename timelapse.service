@@ -1,0 +1,17 @@
+[Unit]
+Description=Timelapse Camera
+DefaultDependencies=no
+After=network-online.target
+
+[Service]
+ExecStartPre=/home/pi/timelapse/copy_index_to_webroot.sh
+ExecStart=python3 /home/pi/timelapse/start.py
+WorkingDirectory=/home/pi/timelapse
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+Type=simple
+User=pi
+
+[Install]
+WantedBy=multi-user.target
