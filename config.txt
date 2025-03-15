@@ -1,0 +1,10 @@
+nopreview=
+verbose=0
+encoding=jpg
+quality=65
+timeout=600000
+timelapse=5000
+width=1280
+height=720
+tuning-file=/usr/share/libcamera/ipa/rpi/vc4/imx219_noir.json
+

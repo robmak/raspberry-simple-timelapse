@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head><link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"></head>
+<body> 
+
+<video width="1280" controls autoplay muted poster="image0000.jpg" src="timelapse0.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+<script>
+	let clipIndex = 0;
+	const clips = ['timelapse0.mp4', 'timelapse1.mp4', 'timelapse2.mp4', 'timelapse3.mp4', 'timelapse4.mp4'];
+	const $video = document.getElementsByTagName('video')[0];
+	if ($video) {
+		$video.addEventListener('ended',(ev) => {
+			console.log(clipIndex, clips[clipIndex]);
+			$video.setAttribute('src', clips[clipIndex]);
+			clipIndex = (clipIndex + 1) % (clips.length - 1);
+		},false);
+		$video.setAttribute('src', clips[clipIndex]);
+		clipIndex = (clipIndex + 1) % (clips.length - 1);
+	}
+</script>
+
+</body> 
+</html>
+
+
