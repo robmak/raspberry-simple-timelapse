@@ -8,8 +8,9 @@
 </video>
 
 <script>
+	const clipAmount = 15;
+	const clips = Array.from(Array(clipAmount).keys(), (_, i) => `timelapse${i}.mp4`);
 	let clipIndex = 0;
-	const clips = ['timelapse0.mp4', 'timelapse1.mp4', 'timelapse2.mp4', 'timelapse3.mp4', 'timelapse4.mp4'];
 	const $video = document.getElementsByTagName('video')[0];
 	if ($video) {
 		$video.addEventListener('ended',(ev) => {
